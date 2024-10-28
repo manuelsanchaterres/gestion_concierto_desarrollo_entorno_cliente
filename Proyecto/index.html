@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor evento</title>
+
+
+    <style>
+
+        *{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            align-content: center;
+            display: inline-block;
+            color: white;
+            background-color: #3379c3;
+        }
+
+        .formulario {
+            width: 50%;
+        }
+
+        .eventos {
+            background-color: azure;
+            width: 50%;
+        }
+
+        .contenedor_registro {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .precio{
+            display: flex;
+            background-color: rgb(180, 179, 179);
+            padding: 20px;
+            margin: 30px;
+            width: 100%;
+        }
+
+        .precio_formulario{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .precio_final {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            text-align: center;
+            font-family: Arial;
+            font-size: 16px;
+            background-color: rgb(223, 220, 220);
+        }
+
+        .registrar {
+            padding: 20px;
+        }
+
+
+        input {
+            width: 250px;
+            height: 25px;
+            padding: 3px;
+            border-style: none;
+            background-color: rgb(235, 233, 233);
+            border-radius: 0.2rem;
+            outline: none;
+        }
+
+
+        .registrar input {
+            width: 160px;
+            height: 40px;
+            background-color: orange;
+            border: 0;
+            font-weight: bold;
+            border-radius: 1rem;
+            
+        }
+
+        
+        .contenedor-precio {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #boton-calcular {
+            align-self: flex-end;
+            justify-self: end;
+            padding-right: 40px;
+        }
+
+        #calcular {
+            padding: 5px;
+            background-color: orange;
+            border: 0;
+            font-weight: bold;
+            width: 120px;
+            border-radius: 1rem;
+        }
+
+        .contenedor_precio_final {
+            background-color: white;
+            align-self: center;
+            justify-self: center;
+        }
+
+        h3 {
+            display: inline-block;
+            padding-left: 30px;
+        }
+
+
+        .main {
+            display: flex;
+        }
+
+        .eventos {
+            width: 400px;
+            height: 100%;
+            background-color: aqua;
+        }
+
+
+    </style>
+
+
+    
+
+</head>
+<body>
+
+
+    <header>
+        <div class="titulo">
+            <h1>Gestión de eventos</h1>
+        </div>    
+    </header>
+
+    <main>
+        <div class="eventos">
+        </div>
+    
+        <div class="formulario">
+            <form class="registro">
+    
+                <div class="contenedor_registro">
+                   <div class="div-contenedor">
+                       <label for="evento">Nombre del evento: </label>
+                       <br><br>
+                       <input type="text" id="evento" name="evento">
+                   </div>
+                   <div class="div-contenedor">
+                       <label for="artista">Artista: </label>
+                       <br><br>
+                       <input type="text" id="artista" name="artista">
+                   </div>
+                   <div class="div-contenedor">
+                       <label for="fecha">Fecha del evento: </label>
+                       <br><br>
+                       <input type="date" id="fecha" name="fecha">
+                   </div>
+                   <div class="div-contenedor">
+                       <label for="aforo">Número de asistentes: </label>
+                       <br><br>
+                       <input type="number" id="aforo" name="aforo">
+                   </div>
+                   <div class="div-contenedor">
+                       <label for="temporada">Temporada</label>
+                       <br><br>
+                       <select name="temporada" id="temporada">
+                           <option value="Invierno">Invierno</option>
+                           <option value="Primavera">Primavera</option>
+                           <option value="Verano">Verano</option>
+                           <option value="Otoño">Otoño</option>
+                       </select>
+                   </div>
+                   <div class="div-contenedor">
+                       <label for="aforo">Sala</label>
+                        <br><br>
+                       <input type="number" id="aforo" name="aforo">
+                   </div> 
+               </div>
+           
+                   <h3>Coste del evento</h3>
+                   <div class="precio">
+           
+                       <div class="precio_formulario">
+                           <form>
+                               <div class="contenedor-precio">
+                                   <label for="cache">Caché del artista:</label>
+                                   <br>
+                                   <input type="number" id="cache" name="cache">
+                               </div>
+                               <div class="contenedor-precio">
+                                   <label for="gastos">Gastos de Gestión:</label>
+                                   <br>
+                                   <input type="number" id="gastos_g" name="gastos_g">
+                               </div>
+                               <div class="contenedor-precio">
+                                   <label for="importe">Importe total: </label>
+                                   <br>
+                                   <input type="number" id="importe" name="importe">
+                               </div>
+                               <div class="contenedor-precio" id="boton-calcular">
+                                   <input type="submit" value="Calcular" id="calcular">
+                               </div>
+                           </form>
+                       </div>
+                       
+                       <div class="precio_final">
+                           <h3>El precio recomendado es: </h3>
+                           <div class="contenedor_precio_final"></div>
+                       </div>
+                   </div>
+           
+           
+                   <div class="registrar">
+                       <input type="submit" value="Registrar">
+                   </div>   
+            </form>
+        </div>
+    </main>
+    
+    <script>
+
+    </script>
+    
+</body>
+</html>
