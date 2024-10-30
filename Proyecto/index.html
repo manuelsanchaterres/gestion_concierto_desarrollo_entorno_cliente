@@ -117,10 +117,16 @@
             border-radius: 1rem;
         }
 
-        .contenedor_precio_final {
+        .contenedor-precio-final {
             background-color: white;
             align-self: center;
             justify-self: center;
+        }
+
+        .contenedor-precio-final-precio {
+
+            color: red;
+            font-weight: 600;
         }
 
         h3 {
@@ -141,10 +147,6 @@
 
 
     </style>
-
-
-    
-
 </head>
 <body>
 
@@ -160,7 +162,7 @@
         </div>
     
         <div class="formulario">
-            <form class="registro">
+            <form class="registro" method="post">
     
                 <div class="contenedor_registro">
                    <div class="div-contenedor">
@@ -186,17 +188,12 @@
                    <div class="div-contenedor">
                        <label for="temporada">Temporada</label>
                        <br><br>
-                       <select name="temporada" id="temporada">
-                           <option value="Invierno">Invierno</option>
-                           <option value="Primavera">Primavera</option>
-                           <option value="Verano">Verano</option>
-                           <option value="Otoño">Otoño</option>
-                       </select>
+                       <input type="temporada" id="temporada" name="temporada" readonly>
                    </div>
                    <div class="div-contenedor">
-                       <label for="aforo">Sala</label>
+                       <label for="sala">Sala</label>
                         <br><br>
-                       <input type="number" id="aforo" name="aforo">
+                       <input type="number" id="sala" name="sala">
                    </div> 
                </div>
            
@@ -221,28 +218,26 @@
                                    <input type="number" id="importe" name="importe">
                                </div>
                                <div class="contenedor-precio" id="boton-calcular">
-                                   <input type="submit" value="Calcular" id="calcular">
+                                   <input type="submit"  id="calcular" value="Calcular" id="calcular">
                                </div>
                            </form>
                        </div>
                        
                        <div class="precio_final">
                            <h3>El precio recomendado es: </h3>
-                           <div class="contenedor_precio_final"></div>
+                           <div class="contenedor-precio-final"><span class="contenedor-precio-final-precio"></span></div>
                        </div>
                    </div>
            
            
                    <div class="registrar">
-                       <input type="submit" value="Registrar">
+                       <input type="submit" id="registrar" value="Registrar" onclick="enviarFormulario()">
                    </div>   
             </form>
         </div>
     </main>
     
-    <script>
-
-    </script>
+    <script src="index.js"></script>
     
 </body>
 </html>
